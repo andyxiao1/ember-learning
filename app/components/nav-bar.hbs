@@ -1,0 +1,19 @@
+<BsNavbar 
+  @backgroundColor="white" as |navbar|>
+  <navbar.content>
+    <navbar.nav as |nav|>
+      <nav.item>
+        <nav.linkTo @route="index">Home</nav.linkTo>
+      </nav.item>
+      <nav.item>
+        <nav.linkTo @route="images">Images</nav.linkTo>
+      </nav.item>
+      <nav.item>
+        <nav.linkTo @route="test">Test</nav.linkTo>
+      </nav.item>
+      <nav.item>
+        <nav.linkTo @route="todo">To Do</nav.linkTo>
+      </nav.item>
+    </navbar.nav>
+  </navbar.content>
+</BsNavbar>

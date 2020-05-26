@@ -1,0 +1,17 @@
+<article class="todo-list-container">
+  <header>
+    <h3>
+      To Do List
+      <button class="btn btn-secondary" style="float: right;" {{on "click" this.clear}}>Clear</button>
+    </h3>
+  </header>
+
+  <form {{on "submit" this.addItem}}>
+    <input class="form-control" id="todo-list-input" placeholder="Type in a task" value={{this.input}} {{on "input" this.handleInput}}/>
+  </form>
+  <ul>
+    {{#each @items as |item|}}
+      <Todo::Item @removeItem={{fn this.removeItem item}}>{{item.text}}</Todo::Item>
+    {{/each}}
+  </ul>
+</article>

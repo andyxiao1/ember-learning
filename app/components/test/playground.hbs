@@ -1,0 +1,19 @@
+<article class="test-playground-container">
+  <header>
+    <h3>Testing stuff out here</h3>
+  </header>
+
+  <button {{on "click" this.toggleView}}>
+    {{if this.isViewable "Hide" "Show"}}
+  </button>
+
+  {{#if this.isViewable}}
+    <p>You can see this now</p>
+
+    <button {{on "click" this.clearInput}}>Clear</button>
+
+    <label for="playground-input">Type stuff in here</label>
+    <Input id="playground-input" @value={{unbound this.input}} {{on "input" this.updateInput}}/>
+    <p>You have typed: {{this.input}}</p>
+  {{/if}}
+</article>
